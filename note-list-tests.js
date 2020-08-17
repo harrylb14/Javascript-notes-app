@@ -3,9 +3,9 @@
     var note = new NoteList();
 
     if(note.list.length !== 0){
-      throw new Error('Your list is not empty')
-  }
-}
+      throw new Error('Your list is not empty');
+    };
+  };
   noteList();
 })(this);
 
@@ -15,8 +15,8 @@
     morenote.addNote('More JS')
 
     if(morenote.list[0] !== 'More JS'){
-      throw new Error('NOT HERE')
-    }
-  }
+      throw new Error('NOT HERE');
+    };
+  };
  addNoteTest();
 })(this)

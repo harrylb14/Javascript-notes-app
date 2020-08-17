@@ -12,8 +12,7 @@ Notes.prototype = (function (){
   return {
     content: notescontent
   };
- 
-})();
+ })();
+
 exports.Notes = Notes;
 })(this);
-
