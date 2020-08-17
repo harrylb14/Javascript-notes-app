@@ -9,3 +9,14 @@
   noteList();
 })(this);
 
+(function(exports){
+  function addNoteTest(){
+    var morenote = new NoteList();
+    morenote.addNote('More JS')
+
+    if(morenote.list[0] !== 'More JS'){
+      throw new Error('NOT HERE')
+    }
+  }
+ addNoteTest();
+})(this)

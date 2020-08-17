@@ -8,12 +8,15 @@
         console.log(this.list);
       };
 
+      function myaddNote(text) {
+        this.list.push(text)
+      }
 
     return {
-      noteList: mynoteList
+      noteList: mynoteList,
+      addNote: myaddNote
     };
-    })
-    
+    })();
     exports.NoteList = NoteList;
 })(this);
 
