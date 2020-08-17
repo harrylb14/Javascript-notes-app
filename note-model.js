@@ -1,20 +1,19 @@
 (function(exports) {
 function Notes(text) {
   this.text = text;
-}
-exports.Notes = Notes;
-})(this);
+};
 
 Notes.prototype = (function (){
 
-  function content() {
+  function notescontent() {
     console.log(this.text);
   };
 
   return {
-    content: content
+    content: notescontent
   };
  
-})
-
+})();
+exports.Notes = Notes;
+})(this);
 
