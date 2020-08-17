@@ -1,6 +1,9 @@
+(function(exports) {
 function Notes(text) {
   this.text = text;
 }
+exports.Notes = Notes;
+})(this);
 
 Notes.prototype = (function (){
 
@@ -11,7 +14,7 @@ Notes.prototype = (function (){
   return {
     content: content
   };
-})();
+ 
+})
 
-var words = new Notes('My fave language');
-words.content();
+
