@@ -5,12 +5,12 @@ function Notes(text) {
 
 Notes.prototype = (function (){
 
-  function notescontent() {
+  function content() {
     console.log(this.text);
   };
 
   return {
-    content: notescontent
+    content
   };
  })();
 

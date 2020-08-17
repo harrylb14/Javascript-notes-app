@@ -4,19 +4,18 @@
   };
 
   NoteList.prototype = (function(){
-    function mynoteList() {
+    function noteList() {
       console.log(this.list);
     };
 
-    function myaddNote(text) {
+    function addNote(text) {
       this.list.push(text)
     };
 
     return {
-      noteList: mynoteList,
-      addNote: myaddNote
+      noteList, addNote
     };
   })();
-  
+
   exports.NoteList = NoteList;
 })(this);
