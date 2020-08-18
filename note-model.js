@@ -1,9 +1,9 @@
 (function(exports) {
-function Notes(text) {
+function Note(text) {
   this.text = text;
 };
 
-Notes.prototype = (function (){
+Note.prototype = (function () {
 
   function content() {
     console.log(this.text);
@@ -14,5 +14,5 @@ Notes.prototype = (function (){
   };
  })();
 
-exports.Notes = Notes;
+exports.Note = Note;
 })(this);

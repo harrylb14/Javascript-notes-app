@@ -1,22 +1,18 @@
 (function(exports) {
-  function noteList(){
+  function noteListTest(){
     var note = new NoteList();
 
-    if(note.list.length !== 0){
-      throw new Error('Your list is not empty');
-    };
+    assert.isTrue(note.list.length === 0);   
   };
-  noteList();
+  noteListTest();
 })(this);
 
-(function(exports){
-  function addNoteTest(){
+(function(exports) {
+  function addNoteTest() {
     var morenote = new NoteList();
-    morenote.addNote('More JS')
+    morenote.addNote('More JS');
 
-    if(morenote.list[0] !== 'More JS'){
-      throw new Error('NOT HERE');
-    };
-  };
- addNoteTest();
+    assert.isTrue(morenote.list[0] === 'More JS');
+  }
+  addNoteTest();
 })(this)
