@@ -4,8 +4,8 @@
   };
 
   NoteList.prototype = (function() {
-    function noteList() {
-      console.log(this.list);
+    function notes() {
+      return (this.list);
     };
 
     function addNote(text) {
@@ -13,7 +13,7 @@
     }; 
 
     return {
-      noteList, addNote 
+      notes, addNote 
     };
   })();
 
