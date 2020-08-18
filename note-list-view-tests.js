@@ -30,4 +30,3 @@
   };
   noteListViewTestNoItems();
 })(this);
-
