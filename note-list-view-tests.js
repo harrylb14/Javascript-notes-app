@@ -33,3 +33,15 @@
   };
   noteListViewTestNoItems();
 })(this);
+
+(function(exports) {
+  function noteListViewTwentyCharacters() {
+    var noteList = new NoteList();
+    var note = new Note('This is a much longer string that hopefully will be chopped down by this method');
+    noteList.addNote(note);
+    var noteListView = new NoteListView(noteList);
+
+    assert.isTrue(noteListView.returnHTML() === "<ul><li><div>This is a much longe</div></li></ul>");
+  };
+  noteListViewTwentyCharacters();
+})(this);

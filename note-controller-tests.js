@@ -7,8 +7,7 @@
       return controller.view.returnHTML();
     };
 
-    assert.isTrue(controller.renderHTML() === '<ul><li><div>Favourite Drink: Seltzer</div></li></ul>');
-
+    assert.isTrue(controller.renderHTML() === '<ul><li><div>Favourite Drink: Sel</div></li></ul>')
   };
   renderHTMLTest();
 })(this)

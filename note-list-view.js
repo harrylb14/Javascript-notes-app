@@ -9,7 +9,7 @@
     }
 
     function returnHTML() {
-      array = this.noteList.notes().map(note => note.text);
+      array = this.noteList.notes().map(note => note.text.slice(0, 20));
       return "<ul><li><div>" + array.join("</div></li><li><div>") + "</div></li></ul>";
     };
 

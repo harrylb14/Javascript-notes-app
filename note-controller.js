@@ -18,5 +18,3 @@
   })();
   exports.NoteController = NoteController;
 })(this)
-
- 
