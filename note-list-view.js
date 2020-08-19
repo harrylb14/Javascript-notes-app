@@ -4,13 +4,18 @@
   };
 
   NoteListView.prototype = (function() {
+    function viewNoteList() {
+      return this.noteList;
+    }
+
     function returnHTML() {
-      array = this.noteList.notes()
+      array = this.noteList.notes().map(note => note.text);
       return "<ul><li><div>" + array.join("</div></li><li><div>") + "</div></li></ul>";
     };
 
     return {
-      returnHTML
+      returnHTML,
+      viewNoteList
     };
   })();
 
