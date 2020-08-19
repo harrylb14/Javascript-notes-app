@@ -9,7 +9,9 @@
     };
 
     function addNote(text) {
-      this.list.push(text);
+      let note = new Note(text);
+      note.id = this.list.length;
+      this.list.push(note);
     }; 
 
     return {

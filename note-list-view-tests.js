@@ -1,30 +1,23 @@
 (function(exports) {
   function noteListViewTest(){
     var noteList = new NoteList();
-    var note1 = new Note('Test Note');
-    var note2 = new Note('Another Test Note');
-    noteList.addNote(note1);
-    noteList.addNote(note2);
+    noteList.addNote('Test Note');
+    noteList.addNote('Another Test Note');
     var noteListView = new NoteListView(noteList);
 
     assert.isTrue(noteListView.returnHTML() === "<ul><li><div>Test Note</div></li><li><div>Another Test Note</div></li></ul>");   
   };
   noteListViewTest();
-})(this);
 
-(function(exports) {
   function noteListViewTestSingleItem(){
     var noteList = new NoteList();
-    var note = new Note('Test Note')
-    noteList.addNote(note);
+    noteList.addNote('Test Note');
     var noteListView = new NoteListView(noteList);
 
     assert.isTrue(noteListView.returnHTML() === "<ul><li><div>Test Note</div></li></ul>");   
   };
   noteListViewTestSingleItem();
-})(this);
 
-(function(exports) {
   function noteListViewTestNoItems(){
     var noteList = new NoteList();
     var noteListView = new NoteListView(noteList);
@@ -32,13 +25,10 @@
     assert.isTrue(noteListView.returnHTML() === "<ul><li><div></div></li></ul>");   
   };
   noteListViewTestNoItems();
-})(this);
 
-(function(exports) {
   function noteListViewTwentyCharacters() {
     var noteList = new NoteList();
-    var note = new Note('This is a much longer string that hopefully will be chopped down by this method');
-    noteList.addNote(note);
+    noteList.addNote('This is a much longer string that hopefully will be chopped down by this method');
     var noteListView = new NoteListView(noteList);
 
     assert.isTrue(noteListView.returnHTML() === "<ul><li><div>This is a much longe</div></li></ul>");
