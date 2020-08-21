@@ -16,43 +16,25 @@
     };
 
     function makeUrlChangeShowCurrentNote() {
-      window.addEventListener('hashchange', showCurrentNote);
-      console.log(this.view);
-    };
-
-    function showCurrentNote() {
-      x = getNoteFromUrl(window.location);
-      showNote(parseInt(x, 10));
-    };
-
-    function getNoteFromUrl(location) {
-      console.log(this.view);
-      return location.hash.split("#notes/")[1];
+      window.addEventListener('hashchange', showNote.bind(this));
     };
     
-    function showNoteTest () {
-      document
-        .getElementById("app")
-        .innerHTML = 'Testing';
+    function showNote() {
+      id = parseInt(getNoteFromUrl(), 10);
+      let note = this.noteListView().viewNoteList().list[id];
+      let noteView = new SingleNoteView(note);
+      document.getElementById("app").innerHTML = noteView.returnHTML();
     };
 
-    function showNote(id) {
-      var view = noteListView().viewNoteList().list[id];
-      var noteView = new SingleNoteView(view);
-      document
-        .getElementById("app")
-        .innerHTML = noteView.returnHTML();
+    function getNoteFromUrl() {
+      location = window.location;
+      return location.hash.split("#notes/")[1];
     };
 
     return {
       noteListView,
       renderHTML,
       makeUrlChangeShowCurrentNote,
-      showNote,
-      getNoteFromUrl,
-      showNoteTest,
-      showCurrentNote
-
     };
   })();
   exports.NoteController = NoteController;

@@ -1,4 +1,14 @@
 (function(exports) {
+  function singleNoteViewTest() {
+    var list = new NoteList();
+    var controller = new NoteController(list);
+    controller.makeUrlChangeShowCurrentNote(controller.view);
+    window.location.hash = '#notes/0';
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
+    assert.isTrue(document.getElementById('app').innerHTML === "<div>Favourite Drink: Seltzer</div>");
+  }
+  singleNoteViewTest(); 
+
   function renderHTMLTest() {
     var list = new NoteList();
     var controller = new NoteController(list);
@@ -8,17 +18,6 @@
     };
 
     assert.isTrue(controller.renderHTML() === "<ul><li><div><a href='#notes/0'>Favourite Drink: Sel</a></div></li></ul>")
-  };
-  renderHTMLTest();
-
-  /*function singleNoteViewTest() {
-    var list = new NoteList();
-    var controller = new NoteController(list);
-    controller.makeUrlChangeShowCurrentNote();
-    var event = new CustomEvent("hashchange", { getNoteFromUrl : 0});
-    document.dispatchEvent(event);
-    console.log(document.getElementById('app').innerHTML);
-    assert.isTrue(document.getElementById('app').innerHTML === "<div>Favourite Drink: Seltzer</div>");
-  }
-  singleNoteViewTest(); */
+  }; 
+  renderHTMLTest(); 
 })(this)
