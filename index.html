@@ -8,10 +8,25 @@
     <script src='note-model.js'></script>
     <script src='note-list-model.js'></script>
     <script src='note-list-view.js'></script>
+    <script src='note-add.js'></script>
+    <script src='note-display.js'></script>
   </head>
   <div id="app">
     hello
   </div>
+
+  <form id="text" name="text" action="#notes/" method = "post">
+    <input type="submit" name="Create Note" value="Create Note">
+  </form>
+  <textarea id="textfield" name="text" form="text" placeholder="Enter New Note..."></textarea>
+
   <script src='single-note-view.js'></script>
   <script src='note-controller.js'></script>
+  <script>
+    list = new NoteList();
+    controller = new NoteController(list);
+    controller.renderHTML();
+    controller.makeUrlChangeShowCurrentNote();
+    controller.listenForSubmit();
+  </script>
 </html>

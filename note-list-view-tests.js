@@ -4,7 +4,6 @@
     noteList.addNote('Test Note');
     noteList.addNote('Another Test Note');
     var noteListView = new NoteListView(noteList);
-
     assert.isTrue(noteListView.returnHTML() === "<ul><li><div><a href='#notes/0'>Test Note</a></div></li><li><div><a href='#notes/1'>Another Test Note</a></div></li></ul>");   
   };
   noteListViewTest();
